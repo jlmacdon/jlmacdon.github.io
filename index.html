@@ -15,8 +15,7 @@
         var participant = new Participant();
         var userName = document.getElementById("username").value;
         var userAge = document.getElementById("age").value;
-        alert(userName + " " + userAge);
-        participant.save({foo: "bar"}).then(function (object) {
+        participant.save({username: userName, age: userAge}).then(function (object) {
             alert("yay! it worked");
         });
     }

@@ -10,7 +10,7 @@
         td,th,input {font-size:15px}
     </style>
     <script language="JavaScript">
-        var i, j, n, IsOver=true;
+        var i, j, n, IsOver=true, counter=0;
         var MoveCount, MoveCount2, MaxMoveCount;
         pow2 = new Array(1, 2, 4, 8);
         IsHuman = new Array(2);
@@ -292,6 +292,8 @@
                         for (ii=0; ii<4; ii++)
                         { if (Board[ii][3-ii]<16) Board[ii][3-ii]+=16; }
                         IsOver=true;
+                        ++counter;
+                        alert(counter);
                     }
                 }
                 }
@@ -300,11 +302,15 @@
             if (IsOver)
             { RefreshBoard();
                 alert("Player "+eval(MoveCount2%2+1)+" has won !");
+                ++counter;
+                alert(counter);
             }
             else
             { if (MoveCount==31)
             { IsOver=true;
                 alert("It's a draw !");
+                ++counter;
+                alert(counter);
             }
             }
         }

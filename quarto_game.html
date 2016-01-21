@@ -14,7 +14,13 @@
         Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
 
         var Participant = Parse.Object.extend("Participant");
-        var i, j, n, IsOver=true, counter=0;
+        var i, j, n, IsOver=true, counter= 0, numOfTrials= 2, numOfSeconds=0;
+
+        var UserDataObj = {};
+        UserDataWins = newArray(numOfTrials);
+        UserDataTime = newArray(numOfTrials);
+        UserDataNumOfMoves = newArray(numOfTrials);
+
         var MoveCount, MoveCount2, MaxMoveCount;
         pow2 = new Array(1, 2, 4, 8);
         IsHuman = new Array(2);
@@ -69,17 +75,34 @@
         IsHuman[1]=false;
         Level[0]=1;
         Level[1]=2;
+        function timedCount() {
+            ++numOfSeconds;
+            t = setTimeout(function(){ timedCount() }, 1000);
+        }
+
+        function startCount() {
+            if (!timer_is_on) {
+                timer_is_on = 1;
+                timedCount();
+            }
+        }
+
+        function stopCount() {
+            clearTimeout(t);
+            timer_is_on = 0;
+        }
+
         function Check(){
-            if (counter <= 2){
+            if (counter < numOfTrials){
                 Init();
             }
             else {
-                alert("Exit");
                 window.location = "jlmacdon.github.io/ending.html";
             }
         }
         function Init()
         {
+            startCount();
             var ii, jj, rr1, rr2;
             for (ii=0; ii<4; ii++)
             { for (jj=0; jj<4; jj++)
@@ -316,12 +339,14 @@
             { RefreshBoard();
                 alert("Player "+eval(MoveCount2%2+1)+" has won !");
                 ++counter;
+                alert(numOfSeconds + "seconds!");
             }
             else
             { if (MoveCount==31)
             { IsOver=true;
                 alert("It's a draw !");
                 ++counter;
+                alert(numOfSeconds + "seconds!");
             }
             }
         }

@@ -65,8 +65,17 @@
         IsHuman[1]=false;
         Level[0]=1;
         Level[1]=2;
+        function Check(){
+            if (counter <= 10){
+                Init();
+            }
+            else {
+                window.location = "jlmacdon.github.io/ending.html";
+            }
+        }
         function Init()
-        { var ii, jj, rr1, rr2;
+        {
+            var ii, jj, rr1, rr2;
             for (ii=0; ii<4; ii++)
             { for (jj=0; jj<4; jj++)
                 Board[ii][jj]=-1;
@@ -293,7 +302,6 @@
                         { if (Board[ii][3-ii]<16) Board[ii][3-ii]+=16; }
                         IsOver=true;
                         ++counter;
-                        alert(counter);
                     }
                 }
                 }
@@ -303,14 +311,12 @@
             { RefreshBoard();
                 alert("Player "+eval(MoveCount2%2+1)+" has won !");
                 ++counter;
-                alert(counter);
             }
             else
             { if (MoveCount==31)
             { IsOver=true;
                 alert("It's a draw !");
                 ++counter;
-                alert(counter);
             }
             }
         }
@@ -508,7 +514,7 @@
                         <tr><td>
                             <table border cellpadding=7 cellspacing=4 width=100% bgcolor=#80A0E0>
                                 <tr>
-                                    <td align=center><input type=button value="&nbsp;&nbsp;New&nbsp;&nbsp;" style="width:60" onClick="javascript:Init()"></td>
+                                    <td align=center><input type=button value="&nbsp;&nbsp;New&nbsp;&nbsp;" style="width:60" onClick="javascript:Check()"></td>
                                     <td align=center><input type=button value="&nbsp;Help&nbsp;" style="width:60" onClick="javascript:Help()"></td>
                                 </tr>
                                 <tr><td colspan=2>

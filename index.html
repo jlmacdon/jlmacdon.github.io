@@ -15,7 +15,7 @@
         var participant = new Participant();
         var userName = document.getElementById("username");
         var userAge = document.getElementById("age");
-        alert(userName + " " + "userAge");
+        alert(userName + " " + userAge);
         participant.save({foo: "bar"}).then(function (object) {
             alert("yay! it worked");
         });
@@ -28,13 +28,13 @@
         <div>Please type in your name and age below:</div>
         <form>
             Name:<br>
-            <input type="text" id=username><br>
+            <input type="text" id="username"><br>
             Age:<br>
             <input type="text" id="age"><br>
             <div class="center">
-                <input type="submit" onclick=saveParticipantData()>
+                <button onclick=saveParticipantData()>
                     <a href="instructions.html">Enter</a>
-                />
+                </button>
             </div>
         </form>
     </div>

@@ -10,7 +10,8 @@
         td,th,input {font-size:15px}
     </style>
     <script language="JavaScript">
-        var i, j, n, IsOver=true;
+        var i, j, n, IsOver=true, counter = 0, numOfTrials = 2, startTime, endTime, winner;
+        UserDataArr = new Array(numOfTrials);
         var MoveCount, MoveCount2, MaxMoveCount;
         pow2 = new Array(1, 2, 4, 8);
         IsHuman = new Array(2);
@@ -41,32 +42,43 @@
         Pic[13].src = "https://cloud.githubusercontent.com/assets/5677744/12475564/a9483e3c-bfd8-11e5-889e-8293b4786019.gif";
         Pic[14].src = "https://cloud.githubusercontent.com/assets/5677744/12475566/a94c466c-bfd8-11e5-9ebe-a60de4a0cecf.gif";
         Pic[15].src = "https://cloud.githubusercontent.com/assets/5677744/12475567/a94f8cc8-bfd8-11e5-9072-89da300880c7.gif";
-        Pic[16].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[17].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[18].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[19].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[20].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[21].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[22].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[23].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[24].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[25].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[26].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[27].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[28].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[29].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[30].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-        Pic[31].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
+        Pic[16].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[17].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[18].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[19].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[20].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[21].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[22].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[23].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[24].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[25].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[26].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[27].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[28].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[29].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[30].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[31].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
         /* ============================================================= */
 
         Pic[32] = new Image();
         Pic[32].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
+
+
         IsHuman[0]=true;
         IsHuman[1]=false;
         Level[0]=1;
         Level[1]=2;
+        function Check() {
+            if (counter < numOfTrials)
+                Init();
+            else
+                window.location = 'ending.html';
+        }
+
         function Init()
-        { var ii, jj, rr1, rr2;
+        {
+            startTime = Date.now();
+            var ii, jj, rr1, rr2;
             for (ii=0; ii<4; ii++)
             { for (jj=0; jj<4; jj++)
                 Board[ii][jj]=-1;
@@ -299,12 +311,27 @@
             if (! vv) return(false);
             if (IsOver)
             { RefreshBoard();
+                endTime = Date.now();
                 alert("Player "+eval(MoveCount2%2+1)+" has won !");
+                if(eval(MoveCount2%2+1) == 1) {
+                    winner = "win";
+                }
+                else {
+                    winner = "lose";
+                }
+                UserDataArr[counter] = {win: winner, time: (endTime - startTime), numOfMoves: MoveCount};
+                ++counter;
+
+
             }
             else
             { if (MoveCount==31)
             { IsOver=true;
+                endTime = Date.now();
                 alert("It's a draw !");
+                winner = "draw";
+                UserDataArr[counter] = {win: winner, time: (endTime - startTime), numOfMoves: MoveCount};
+                ++counter;
             }
             }
         }
@@ -434,7 +461,8 @@
                         for (j=0; j < 5; j++)
                         { document.writeln("<tr align=center>");
                             for (i=0; i < 3; i++)
-                            { document.writeln("<td bgcolor=#000000><IMG src=\"quarto"+n+".gif\" border=0 onMouseDown=\"SelectPiece("+n+",true)\"></td>");
+                            {
+                                document.writeln("<td bgcolor=#000000><IMG src=\"quarto" + n + ".gif\" border=0 onMouseDown=\"SelectPiece("+n+",true)\"></td>");
                                 n++;
                             }
                             document.writeln("</tr>");
@@ -446,7 +474,7 @@
                 <td><table noborder cellpadding=3 cellspacing=0>
                     <tr><td><table border cellpadding=0 cellspacing=1 width=100%>
                         <tr><td width=75% colspan=2 align=center bgcolor=#80A0E0><B>Next piece to move</B><br>by Player <input readonly value="&nbsp;&nbsp;&nbsp;&nbsp;" style="width:25;background-color:#FFFFFF" name="NextMove"></td>
-                            <td width=25% align=center bgcolor=#000000><IMG src="quarto15.gif" border=0></td>
+                            <td width=25% align=center bgcolor=#000000><IMG src="https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif" border=0></td>
                         </tr></table>
                     </td></tr>
                     <tr><td>
@@ -502,7 +530,7 @@
                         <tr><td>
                             <table border cellpadding=7 cellspacing=4 width=100% bgcolor=#80A0E0>
                                 <tr>
-                                    <td align=center><input type=button value="&nbsp;&nbsp;New&nbsp;&nbsp;" style="width:60" onClick="javascript:Init()"></td>
+                                    <td align=center><input type=button value="&nbsp;&nbsp;New&nbsp;&nbsp;" style="width:60" onClick="javascript:Check()"></td>
                                     <td align=center><input type=button value="&nbsp;Help&nbsp;" style="width:60" onClick="javascript:Help()"></td>
                                 </tr>
                                 <tr><td colspan=2>

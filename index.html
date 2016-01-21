@@ -13,8 +13,8 @@
     function saveParticipantData() {
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant();
-        var userName = document.getElementById("username");
-        var userAge = document.getElementById("age");
+        var userName = document.getElementById("username").value;
+        var userAge = document.getElementById("age").value;
         alert(userName + " " + userAge);
         participant.save({foo: "bar"}).then(function (object) {
             alert("yay! it worked");

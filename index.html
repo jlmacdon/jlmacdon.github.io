@@ -16,9 +16,9 @@
         <div>Please type in your name and age below:</div>
         <form>
             Name:<br>
-            <input type="text" name="username"><br>
+            <input type="text" id="username"><br>
             Age:<br>
-            <input type="text" name="age"><br>
+            <input type="text" id="age"><br>
             <div class="center">
                 <button onclick="saveParticipantData()">
                     <a href="instructions.html">Enter</a>
@@ -26,13 +26,15 @@
             </div>
         </form>
     </div>
-    <<script>
+    <script>
     function saveParticipantData() {
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant;
 
-        participant.set("username", 'username');
-        participant.set("age", 'age);
+        var username = document.getElementById("username");
+        var age = document.getElementById("age");
+        participant.set("username", username);
+        participant.set("age", age);
 
         participant.save(null, {});
     }

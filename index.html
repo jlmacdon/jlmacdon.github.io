@@ -27,13 +27,8 @@
         </form>
     </div>
     <script>
+     alert("hi");
     function saveParticipantData() {
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({foo: "bar"}).then(function(object) {
-            alert("yay! it worked");
-        });
-
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant;
 

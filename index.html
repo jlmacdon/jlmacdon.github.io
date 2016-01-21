@@ -16,6 +16,7 @@
         var userName = document.getElementById("username").value;
         var userAge = document.getElementById("age").value;
         participant.save({username: userName, age: userAge}).then(function (object) {});
+        localStorage.setItem("participantData", participant);
     }
 
 </script>

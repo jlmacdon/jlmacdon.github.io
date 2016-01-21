@@ -28,6 +28,12 @@
     </div>
     <script>
     function saveParticipantData() {
+        var TestObject = Parse.Object.extend("TestObject");
+        var testObject = new TestObject();
+        testObject.save({foo: "bar"}).then(function(object) {
+            alert("yay! it worked");
+        });
+
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant;
 
@@ -36,7 +42,9 @@
         participant.set("username", username);
         participant.set("age", age);
 
-        participant.save(null, {});
+        participant.save({username: username, age: age}).then(function(object) {
+            alert("yay! it worked");
+        });
     }
     </script>
 </div>

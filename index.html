@@ -8,11 +8,6 @@
     <script>
         Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
         var Parse = require('parse');
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({foo: "bar"}).then(function(object) {
-            alert("yay! it worked");
-        });
     </script>
 </head>
 <body>
@@ -26,12 +21,23 @@
             Age:<br>
             <input type="text" name="age"><br>
             <div class="center">
-                <button>
+                <button onclick="saveParticipantData()">
                     <a href="instructions.html">Enter</a>
                 </button>
             </div>
         </form>
     </div>
+    <<script>
+    function saveParticipantData() {
+        var Participant = Parse.Object.extend("Participant");
+        var participant = new Participant;
+
+        participant.set("username", username);
+        participant.set("age", age);
+
+        participant.save(null, {});
+    }
+    </script>
 </div>
 </body>
 </html>

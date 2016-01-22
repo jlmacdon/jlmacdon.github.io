@@ -15,17 +15,18 @@
             var winArr = new Array(propertyArrLength);
             var timeElapsedArr = new Array(propertyArrLength);
             var numOfMovesArr = new Array(propertyArrLength);
-            do
+            do {
             for (i = 0; i < arrValues.length; ++i) {
-                if((i % 3) == 0) {
+                if ((i % 3) == 0) {
                     winArr[j] = arrValues[i];
                 }
-                else if((i % 3) == 1) {
+                else if ((i % 3) == 1) {
                     timeElapsedArr[j] = arrValues[i];
                 }
                 else {
-                    numOfMovesArr[j]= arrValues[i];
+                    numOfMovesArr[j] = arrValues[i];
                 }
+            }
             } while (++j < (++numOfCommas)/3);
             console.log(winArr);
             console.log(timeElapsedArr);

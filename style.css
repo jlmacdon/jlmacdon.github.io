@@ -12,6 +12,15 @@
 .button:hover {
     background-color: lightgrey;
 }
+
+.center {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    padding: 5% 0;
+
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -22,12 +31,8 @@
     padding: 5% 0;
 }
 
-.center {
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    padding: 5% 0;
-
+.instruction-padding {
+    margin: 5% 15% 5% 15%;
 }
 
 .text-field {

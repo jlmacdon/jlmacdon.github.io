@@ -25,7 +25,11 @@
                 else {
                     numOfMovesArr[j]= arrValues[i];
                 }
-            } while (j < (++numOfCommas)/3)
+              ++j;
+            } while (j < (++numOfCommas)/3);
+            console.log(winArr);
+            console.log(timeElapsedArr);
+            console.log(numOfMovesArr);
             Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);

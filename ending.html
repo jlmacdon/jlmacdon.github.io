@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <title>Quarto</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//www.parsecdn.com/js/parse-1.6.14.min.js"></script>
+    <script>
+        function retrieveGlobalData()
+        {
+            var i,j = 0;
+            var numOfCommas = (localStorage.globalUserData.match(/,/g) || []).length;
+            var arrValues = localStorage.globalUserData.split(',');
+            var userDataArr = new Array((++numOfCommas)/3);
+            for (i = 0; i < userDataArr.length; ++i) {
+                userDataArr[i] = {win: '', timeElapsed: '', numOfMoves: ''};
+                do {
+                    if((j % 3) == 0) {
+                        userDataArr[i].win = arrValues[j];
+                    }
+                    else if((j % 3) == 1) {
+                        userDataArr[i].timeElapsed = arrValues[j];
+                    }
+                    else {
+                        userDataArr[i].numOfMoves = arrValues[j];
+                    }
+                    ++j;
+                } while (j % 3 != 0)
+            }
+
+            var Participant = Parse.Object.extend("Participant");
+            var query = new Parse.Query(Participant);
+            query.equalTo("workerID", localStorage.globalWorkerID);
+            query.first({
+                success: function(results) {
+                    alert("Successfully retrieved " + results.length + "Participant");
+                    results.save(gameDataArr, userDataArr);
+                },
+                error: function(error) {
+                    alert("Error: " + error.code + " " + error.message);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="container">Thank you for participating!</div>
+<script>
+    retrieveGlobalData();
+</script>
 </body>
 </html>

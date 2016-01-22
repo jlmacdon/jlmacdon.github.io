@@ -13,10 +13,11 @@
     function saveParticipantData() {
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant();
-        var userName = document.getElementById("username").value;
+        var workerID = document.getElementById("workerID").value;
         var userAge = document.getElementById("age").value;
-        participant.save({username: userName, age: userAge}).then(function (object) {});
-        localStorage.setItem("participantData", participant);
+        participant.save({username: workerID, age: userAge}).then(function (object) {});
+
+        localStorage.globalWorkerID = workerID;
     }
 
 </script>
@@ -26,8 +27,8 @@
         <div>Please type in your name and age below:</div>
         <form action = "">
         <fieldset>
-            Name:<br>
-            <input type="text" id="username"><br>
+            MTurk Worker ID:<br>
+            <input type="text" id="workerID"><br>
             Age:<br>
             <input type="text" id="age"><br>
             <div class="center">

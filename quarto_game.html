@@ -10,10 +10,8 @@
         td,th,input {font-size:15px}
     </style>
     <script language="JavaScript">
-        var i, j, n, IsOver=true, counter = 0, numOfTrials = 2, startTime, endTime, winner;
-        UserDataArr = new Array(numOfTrials);
-        alert(localStorage.participantData);
-
+        var i, j, n, IsOver=true, counter = 0, numOfTrials = 2, startTime, endTime, winner, timeInMilliseconds;
+        var UserDataArr = new Array(numOfTrials);
         var MoveCount, MoveCount2, MaxMoveCount;
         pow2 = new Array(1, 2, 4, 8);
         IsHuman = new Array(2);
@@ -26,7 +24,6 @@
         Pic= new Array(32);
         for (i=0; i<32; i++)
         { Pic[i] = new Image();}
-
         /* ================ RENAME ALL .GIF FILES ==================== */
         Pic[0].src = "https://cloud.githubusercontent.com/assets/5677744/12475551/a926e6f6-bfd8-11e5-85cf-088777bf916e.gif";
         Pic[1].src = "https://cloud.githubusercontent.com/assets/5677744/12475556/a92b51be-bfd8-11e5-8920-dba4174fbd7c.gif";
@@ -61,22 +58,22 @@
         Pic[30].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
         Pic[31].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
         /* ============================================================= */
-
         Pic[32] = new Image();
         Pic[32].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
-
-
         IsHuman[0]=true;
         IsHuman[1]=false;
         Level[0]=1;
         Level[1]=2;
         function Check() {
+            var i;
             if (counter < numOfTrials)
                 Init();
-            else
-                window.location = 'ending.html';
+            else {
+                    localStorage.globalUserData = UserDataArr.join();
+                    alert(localStorage.globalUserData);
+                    window.location = 'ending.html';
+                }
         }
-
         function Init()
         {
             startTime = Date.now();
@@ -321,10 +318,10 @@
                 else {
                     winner = "lose";
                 }
-                UserDataArr[counter] = {win: winner, time: (endTime - startTime), numOfMoves: MoveCount};
+                timeInMilliseconds = endTime - startTime;
+                strTime = timeInMilliseconds.toString();
+                UserDataArr[counter] = [winner, strTime, MoveCount2];
                 ++counter;
-
-
             }
             else
             { if (MoveCount==31)
@@ -332,7 +329,9 @@
                 endTime = Date.now();
                 alert("It's a draw !");
                 winner = "draw";
-                UserDataArr[counter] = {win: winner, time: (endTime - startTime), numOfMoves: MoveCount};
+                timeInMilliseconds = endTime - startTime;
+                strTime = timeInMilliseconds.toString();
+                UserDataArr[counter] = [winner, strTime, MoveCount2];
                 ++counter;
             }
             }

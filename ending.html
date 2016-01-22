@@ -33,7 +33,7 @@
             query.equalTo("workerID", localStorage.globalWorkerID);
             query.first({
                 success: function(object) {
-                    object.save("gameDataArr", userDataArr);
+                    object.save(gameDataArr, userDataArr);
                 },
                 error: function(error) {
                     alert("Error: " + error.code + " " + error.message);

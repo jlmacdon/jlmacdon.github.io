@@ -32,9 +32,8 @@
             var query = new Parse.Query(Participant);
             query.equalTo("workerID", localStorage.globalWorkerID);
             query.first({
-                success: function(results) {
-                    alert("Successfully retrieved " + results.length + "Participant");
-                    results.save(gameDataArr, userDataArr);
+                success: function(object) {
+                    object.save("gameDataArr", userDataArr);
                 },
                 error: function(error) {
                     alert("Error: " + error.code + " " + error.message);

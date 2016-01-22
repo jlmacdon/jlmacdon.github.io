@@ -321,7 +321,7 @@
                 toggleVisibility();
                 RefreshBoard();
                 endTime = Date.now();
-                alert("Player "+eval(MoveCount2%2+1)+" has won !");
+                alert("Player "+eval(MoveCount2%2+1)+" has won!");
                 if(eval(MoveCount2%2+1) == 1) {
                     winner = "win";
                 }
@@ -337,7 +337,7 @@
             { if (MoveCount==31)
             { IsOver=true;
                 endTime = Date.now();
-                alert("It's a draw !");
+                alert("It's a draw!");
                 winner = "draw";
                 timeInMilliseconds = endTime - startTime;
                 strTime = timeInMilliseconds.toString();

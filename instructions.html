@@ -25,12 +25,14 @@
             This will give that piece to the computer.
         </div>
         <br>
-        <button class="button">
-            <a href="quarto_game.html">
-                Let's Begin!
-            </a>
-        </button>
+        <button class="button" onclick="goToGame()">Let's Begin!</button>
     </div>
 </div>
+<script>
+    function goToGame() {
+        window.location.href = "quarto_game.html";
+        return false;
+    }
+</script>
 </body>
 </html>

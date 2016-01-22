@@ -8,29 +8,32 @@
     <script>
         function retrieveGlobalData()
         {
-            var i,j = 0;
+            var i,j = 0, k = 0, l = 0;
             var numOfCommas = (localStorage.globalUserData.match(/,/g) || []).length;
             var arrValues = localStorage.globalUserData.split(',');
             var propertyArrLength = (++numOfCommas)/3;
             var winArr = new Array(propertyArrLength);
             var timeElapsedArr = new Array(propertyArrLength);
             var numOfMovesArr = new Array(propertyArrLength);
-            do {
+            console.log(arrValues);
             for (i = 0; i < arrValues.length; ++i) {
                 if ((i % 3) == 0) {
                     winArr[j] = arrValues[i];
+                    ++j;
                 }
                 else if ((i % 3) == 1) {
-                    timeElapsedArr[j] = arrValues[i];
+                    timeElapsedArr[k] = arrValues[i];
+                    ++k;
                 }
                 else {
-                    numOfMovesArr[j] = arrValues[i];
+                    numOfMovesArr[l] = arrValues[i];
+                    ++l;
                 }
             }
-            } while (++j < (++numOfCommas)/3);
             console.log(winArr);
             console.log(timeElapsedArr);
             console.log(numOfMovesArr);
+
             Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);

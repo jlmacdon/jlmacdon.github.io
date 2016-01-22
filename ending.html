@@ -54,11 +54,18 @@
         <div>All done!</div>
         <div>Thank you for participating!</div>
         <br>
-        <button class="button" onclick="window.close()">Exit</button>
+        <button class="button" onclick="return quitBox('quit')">Exit</button>
     </div>
 </div>
 <script>
     retrieveGlobalData();
+    function quitBox(cmd) {
+        if (cmd=='quit')
+        {
+            open(location, '_self').close();
+        }
+        return false;
+    }
 </script>
 </body>
 </html>

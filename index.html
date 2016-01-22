@@ -11,25 +11,20 @@
     function saveParticipantData() {
         Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
 
-        var TestObject = Parse.Object.extend("TestObject");
-        var testObject = new TestObject();
-        testObject.save({foo: "bar"}).then(function(object) {
-            alert("yay! it worked");
-        });
-//        var Participant = Parse.Object.extend("Participant");
-//        var participant = new Participant();
-//        var workerID = document.getElementById("workerID").value;
-//        var userAge = document.getElementById("age").value;
-//        participant.save({username: workerID, age: userAge}).then(function (object) {});
-//
-//        localStorage.globalWorkerID = workerID;
+        var Participant = Parse.Object.extend("Participant");
+        var participant = new Participant();
+        var workerID = document.getElementById("workerID").value;
+        var userAge = document.getElementById("age").value;
+        participant.save({username: workerID, age: userAge}).then(function (object) {});
+
+        localStorage.globalWorkerID = workerID;
     }
 
 </script>
 <div class="center">
     <div class="container">
         <div>Welcome to the experiment!</div>
-        <div>Please type in your name and age below:</div>
+        <div>Please type in your MTurk Worker ID and age below:</div>
         <form action = "">
         <fieldset>
             MTurk Worker ID:<br>

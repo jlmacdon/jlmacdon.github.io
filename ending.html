@@ -15,7 +15,6 @@
             var winArr = new Array(propertyArrLength);
             var timeElapsedArr = new Array(propertyArrLength);
             var numOfMovesArr = new Array(propertyArrLength);
-            console.log(arrValues);
             for (i = 0; i < arrValues.length; ++i) {
                 if ((i % 3) == 0) {
                     winArr[j] = arrValues[i];
@@ -30,14 +29,10 @@
                     ++l;
                 }
             }
-            console.log(winArr);
-            console.log(timeElapsedArr);
-            console.log(numOfMovesArr);
 
             Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);
-            var gameDataArr;
             query.equalTo("workerID", localStorage.globalWorkerID);
             query.first({
                 success: function(object) {

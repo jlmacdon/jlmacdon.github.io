@@ -27,7 +27,7 @@
                     ++j;
                 } while (j % 3 != 0)
             }
-
+            alert(localStorage.globalWorkerID);
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);
             query.equalTo("workerID", localStorage.globalWorkerID);

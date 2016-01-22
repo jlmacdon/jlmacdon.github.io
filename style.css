@@ -35,6 +35,9 @@
     margin: 5% 15% 5% 15%;
 }
 
+.new-game-button {
+    margin: 10%;
+}
 .text-field {
     display: flex;
     width: 97%;

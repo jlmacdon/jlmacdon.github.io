@@ -6,11 +6,14 @@
     <META NAME="keywords" content="Game, Quarto, JavaScript">
     <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
     <title>Quarto</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
         td,th,input {font-size:15px}
     </style>
     <script language="JavaScript">
-        var i, j, n, IsOver=true, counter = 0, numOfTrials = 2, startTime, endTime, winner, timeInMilliseconds;
+        var i, j, n, IsOver=true;
+        var counter = 0, numOfTrials = 2, startTime, endTime;
+        var winner, timeInMilliseconds, isHumanTurn = true, gameOver = false;
         var UserDataArr = new Array(numOfTrials);
         var MoveCount, MoveCount2, MaxMoveCount;
         pow2 = new Array(1, 2, 4, 8);
@@ -75,6 +78,7 @@
         }
         function Init()
         {
+            toggleVisibility();
             startTime = Date.now();
             var ii, jj, rr1, rr2;
             for (ii=0; ii<4; ii++)
@@ -188,6 +192,8 @@
         }
         function SelectPiece(ff, bb)
         { if (IsOver) return;
+            isHumanTurn = true;
+            toggleVisibility();
             if (IsHuman[MoveCount2%2]!=bb) return;
             if (Fld[15]>=0) return;
             if (Fld[ff]<0) return;
@@ -211,6 +217,8 @@
         }
         function SetPiece(ii, jj, bb)
         { if (IsOver) return;
+            isHumanTurn = false;
+            toggleVisibility();
             if (IsHuman[MoveCount2%2]!=bb) return;
             if (Fld[15]<0) return;
             if (Board[ii][jj]>=0) return;
@@ -308,7 +316,10 @@
             }
             if (! vv) return(false);
             if (IsOver)
-            { RefreshBoard();
+            {
+                gameOver = true;
+                toggleVisibility();
+                RefreshBoard();
                 endTime = Date.now();
                 alert("Player "+eval(MoveCount2%2+1)+" has won !");
                 if(eval(MoveCount2%2+1) == 1) {
@@ -450,7 +461,7 @@
     </script>
 </head>
 <BODY bgcolor=#00735a text=#000000 onResize="javascript:Resize()">
-<DIV ALIGN=center>
+<DIV ALIGN=center style="padding: 5% 0;">
     <form name="OptionsForm">
         <table noborder>
             <tr>
@@ -495,12 +506,12 @@
                     </td></tr></table>
                 </td>
                 <td>
-                    <table noborder cellpadding=3 cellspacing=3 width=100%>
+                    <table style ="position: relative; margin-top: 100%" noborder cellpadding=3 cellspacing=3 width=100%>
                         <tr><td>
                             <table border cellpadding=7 cellspacing=4 width=100% bgcolor=#80A0E0>
-                                <tr><td><label>Player 1: Human</label></td></tr>
+                                <tr><td><label style="margin: 10%; display: flex">Player 1: Human</label></td></tr>
                                 <tr><td><table noborder width=100% cellpadding=0 cellspacing=0>
-                                    <tr><td><label> Player 2: Computer </label></td></tr>
+                                    <tr><td><label style="margin: 10% 3% 0% 6%; display: flex"> Player 2: Computer </label></td></tr>
                                     <tr><td>&nbsp;
                                         <!--Level:-->
                                         <!--<input type=radio name="Level1" checked value="1" onClick="javascript:SetLevel(0,1)">1-->
@@ -528,7 +539,7 @@
                             <!--</table>-->
                         </td></tr>
                         <tr><td>
-                            <table border cellpadding=7 cellspacing=4 width=100% bgcolor=#80A0E0>
+                            <table style="visibility: hidden" border cellpadding=7 cellspacing=4 width=100% bgcolor=#80A0E0>
                                 <tr>
                                     <td align=center><input type=button value="&nbsp;&nbsp;New&nbsp;&nbsp;" style="width:60" onClick="javascript:Check()"></td>
                                     <td align=center><input type=button value="&nbsp;Help&nbsp;" style="width:60" onClick="javascript:Help()"></td>
@@ -548,8 +559,28 @@
             </tr>
         </table>
     </form>
+<div id="human-turn" style="font-size: 150%; display: flex; flex-direction: column;">Click on one of the black spaces where you would like to put your piece!</div>
+<div id="computer-turn" style="font-size: 150%; display: flex; flex-direction: column; position: relative; bottom: 30px;">Click on one of the pieces to give to your opponent!</div>
+<button id="new-game-button" class="button" style="visibility: hidden; font-size: 150%" onClick="Check()">New Game</button>
 </DIV>
 <script language="JavaScript">
+    function toggleVisibility (){
+        if (gameOver) {
+            document.getElementById("human-turn").style.visibility = 'hidden';
+            document.getElementById("computer-turn").style.visibility = 'hidden';
+            document.getElementById("new-game-button").style.visibility = 'visible';
+        }
+        else {
+            if (isHumanTurn) {
+                document.getElementById("human-turn").style.visibility = 'visible';
+                document.getElementById("computer-turn").style.visibility = 'hidden';
+            }
+            if (!isHumanTurn) {
+                document.getElementById("human-turn").style.visibility = 'hidden';
+                document.getElementById("computer-turn").style.visibility = 'visible';
+            }
+        }
+    }
     Init();
     setInterval("Timer()",200);
 </script>

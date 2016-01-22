@@ -15,7 +15,7 @@
         var participant = new Participant();
         var workerID = document.getElementById("workerID").value;
         var userAge = document.getElementById("age").value;
-        participant.save({username: workerID, age: userAge}).then(function (object) {});
+        participant.save({workerID: workerID, age: userAge}).then(function (object) {});
 
         localStorage.globalWorkerID = workerID;
     }

@@ -11,22 +11,21 @@
             var i,j = 0;
             var numOfCommas = (localStorage.globalUserData.match(/,/g) || []).length;
             var arrValues = localStorage.globalUserData.split(',');
-            var userDataArr = new Array((++numOfCommas)/3);
-            for (i = 0; i < userDataArr.length; ++i) {
-                userDataArr[i] = {win: '', timeElapsed: '', numOfMoves: ''};
-                do {
-                    if((j % 3) == 0) {
-                        userDataArr[i].win = arrValues[j];
-                    }
-                    else if((j % 3) == 1) {
-                        userDataArr[i].timeElapsed = arrValues[j];
-                    }
-                    else {
-                        userDataArr[i].numOfMoves = arrValues[j];
-                    }
-                    ++j;
-                } while (j % 3 != 0)
-            }
+            var winArr = new Array((++numOfCommas)/3);
+            var timeElapsedArr = new Array((++numOfCommas)/3);
+            var numOfMovesArr = new Array((++numOfCommas)/3);
+            do
+            for (i = 0; i < arrValues.length; ++i) {
+                if((i % 3) == 0) {
+                    winArr[j] = arrValues[i];
+                }
+                else if((i % 3) == 1) {
+                    timeElapsedArr[j] = arrValues[i];
+                }
+                else {
+                    numOfMovesArr[j]= arrValues[i];
+                }
+            } while (j < (++numOfCommas)/3)
             Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);
@@ -34,7 +33,9 @@
             query.equalTo("workerID", localStorage.globalWorkerID);
             query.first({
                 success: function(object) {
-                    object.set("gameDataArr", userDataArr);
+                    object.set("winArr", winArr);
+                    object.set("timeElapsedArr", timeElapsedArr);
+                    object.set("numOfMovesArr", numOfMovesArr);
                     object.save(null, {});
                 },
                 error: function(error) {

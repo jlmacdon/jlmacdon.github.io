@@ -8,9 +8,17 @@
 </head>
 <body>
 <script>
+
     Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
 
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+    testObject.save({foo: "bar"}).then(function(object) {
+        alert("yay! it worked");
+    });
+
     function saveParticipantData() {
+
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant();
         var workerID = document.getElementById("workerID").value;

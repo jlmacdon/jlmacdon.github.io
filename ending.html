@@ -11,9 +11,10 @@
             var i,j = 0;
             var numOfCommas = (localStorage.globalUserData.match(/,/g) || []).length;
             var arrValues = localStorage.globalUserData.split(',');
-            var winArr = new Array((++numOfCommas)/3);
-            var timeElapsedArr = new Array((++numOfCommas)/3);
-            var numOfMovesArr = new Array((++numOfCommas)/3);
+            var propertyArrLength = (++numOfCommas)/3;
+            var winArr = new Array(propertyArrLength);
+            var timeElapsedArr = new Array(propertyArrLength);
+            var numOfMovesArr = new Array(propertyArrLength);
             do
             for (i = 0; i < arrValues.length; ++i) {
                 if((i % 3) == 0) {

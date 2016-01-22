@@ -28,13 +28,13 @@
                 } while (j % 3 != 0)
             }
             Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
-
+            console.log(userDataArr);
             var Participant = Parse.Object.extend("Participant");
             var query = new Parse.Query(Participant);
             query.equalTo("workerID", localStorage.globalWorkerID);
             query.first({
-                success: function(results) {
-                    alert("Successfully retrieved " + results.length + "Participant");
+                success: function(participant) {
+                    alert("Successfully retrieved " + participant.length + "Participant");
                     results.save(gameDataArr, userDataArr);
                 },
                 error: function(error) {

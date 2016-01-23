@@ -75,6 +75,7 @@
                     localStorage.globalUserData = UserDataArr.join();
                     window.location = 'ending.html';
                 }
+            RefreshBoard();
         }
         function Init()
         {
@@ -319,7 +320,7 @@
             {
                 gameOver = true;
                 toggleVisibility();
-                RefreshBoard();
+//                RefreshBoard();
                 endTime = Date.now();
                 alert("Player "+eval(MoveCount2%2+1)+" has won!");
                 if(eval(MoveCount2%2+1) == 1) {

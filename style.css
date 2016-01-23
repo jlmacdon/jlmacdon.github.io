@@ -31,6 +31,9 @@
     padding: 5% 0;
 }
 
+.form-field {
+    border-width: medium;
+}
 .instruction-padding {
     margin: 5% 15% 5% 15%;
 }

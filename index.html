@@ -14,16 +14,17 @@
             window.location.href = "instructions.html";
             return false;
         }
+        else {
+            alert("Please fill out both fields with the appropriate information!");
+        }
     }
     function saveParticipantData() {
         Parse.initialize("mPKfUqcy5ZbCPGvADjU7zGYRJFipKS6SIokZAu3W", "BOKeYCBacfuiQoEKcZVWblnB9J503gzM32tosNUy");
-
         var Participant = Parse.Object.extend("Participant");
         var participant = new Participant();
         var workerID = document.getElementById("workerID").value;
         var userAge = document.getElementById("age").value;
         participant.save({workerID: workerID, age: userAge}).then(function (object) {});
-
         localStorage.globalWorkerID = workerID;
     }
 </script>
@@ -31,8 +32,7 @@
     <div class="container">
         <div>Welcome to the experiment!</div>
         <div>Please type in your MTurk Worker ID and age below:</div><br>
-        <form action = "">
-        <fieldset>
+        <div class="form-field">
             MTurk Worker ID:<br>
             <input class="text-field" type="text" id="workerID"><br>
             Age:<br>
@@ -40,18 +40,13 @@
             <div class="center">
                 <button id="enter-button" class="button" onclick="checkFieldsFilled()">Enter</button>
             </div>
-        </fieldset>    
-        </form>
+        </div>
     </div>
 </div>
 <script>
     window.onkeypress = function(event) {
         if (event.keyCode == 13) {
-           if(document.getElementById("workerID").value.length > 0 && document.getElementById("age").value.length > 0) {
-               saveParticipantData();
-               window.location.href = "instructions.html";
-               return false;
-           }
+            checkFieldsFilled();
         }
     }
 </script>

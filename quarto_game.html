@@ -24,8 +24,8 @@
             Board[i] = new Array(4);
         Fld = new Array(16);
         History = new Array(32);
-        Pic= new Array(32);
-        for (i=0; i<32; i++)
+        Pic= new Array(48);
+        for (i=0; i<48; i++)
         { Pic[i] = new Image();}
         /* ================ RENAME ALL .GIF FILES ==================== */
         Pic[0].src = "https://cloud.githubusercontent.com/assets/5677744/12475551/a926e6f6-bfd8-11e5-85cf-088777bf916e.gif";
@@ -44,22 +44,38 @@
         Pic[13].src = "https://cloud.githubusercontent.com/assets/5677744/12475564/a9483e3c-bfd8-11e5-889e-8293b4786019.gif";
         Pic[14].src = "https://cloud.githubusercontent.com/assets/5677744/12475566/a94c466c-bfd8-11e5-9ebe-a60de4a0cecf.gif";
         Pic[15].src = "https://cloud.githubusercontent.com/assets/5677744/12475567/a94f8cc8-bfd8-11e5-9072-89da300880c7.gif";
-        Pic[16].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[17].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[18].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[19].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[20].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[21].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[22].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[23].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[24].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[25].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[26].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[27].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[28].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[29].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[30].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
-        Pic[31].src = "https://cloud.githubusercontent.com/assets/5677744/12495765/7749f4ca-c046-11e5-9b94-3b928c4d9d7c.gif";
+        Pic[16].src = "https://cloud.githubusercontent.com/assets/5677744/12528842/b7b819ce-c159-11e5-8739-a0da637a4c64.gif";
+        Pic[17].src = "https://cloud.githubusercontent.com/assets/5677744/12528838/b7b3ab96-c159-11e5-895d-68d95b9fa5ae.gif";
+        Pic[18].src = "https://cloud.githubusercontent.com/assets/5677744/12528839/b7b5d48e-c159-11e5-90d5-4957297f8101.gif";
+        Pic[19].src = "https://cloud.githubusercontent.com/assets/5677744/12528840/b7b6a972-c159-11e5-8096-f111a5a93e82.gif";
+        Pic[20].src = "https://cloud.githubusercontent.com/assets/5677744/12528843/b7b82054-c159-11e5-8438-25d39b99aa8b.gif";
+        Pic[21].src = "https://cloud.githubusercontent.com/assets/5677744/12528841/b7b6e9a0-c159-11e5-871b-00d9f53f82ca.gif";
+        Pic[22].src = "https://cloud.githubusercontent.com/assets/5677744/12528844/b7ca8456-c159-11e5-903a-cc0668af46c0.gif";
+        Pic[23].src = "https://cloud.githubusercontent.com/assets/5677744/12528845/b7cc001a-c159-11e5-863c-dfe5e8b09cde.gif";
+        Pic[24].src = "https://cloud.githubusercontent.com/assets/5677744/12528846/b7cd0348-c159-11e5-8b80-899fb788e28f.gif";
+        Pic[25].src = "https://cloud.githubusercontent.com/assets/5677744/12528847/b7d0232a-c159-11e5-85bb-a429bbc44c78.gif";
+        Pic[26].src = "https://cloud.githubusercontent.com/assets/5677744/12528848/b7d24704-c159-11e5-9f3f-7f4faecf089d.gif";
+        Pic[27].src = "https://cloud.githubusercontent.com/assets/5677744/12528849/b7d2ee3e-c159-11e5-90e6-29c2a4007569.gif";
+        Pic[28].src = "https://cloud.githubusercontent.com/assets/5677744/12528850/b7e7a02c-c159-11e5-870a-4406117b405e.gif";
+        Pic[29].src = "https://cloud.githubusercontent.com/assets/5677744/12528851/b7e7aedc-c159-11e5-8916-9b79810ed0f2.gif";
+        Pic[30].src = "https://cloud.githubusercontent.com/assets/5677744/12528852/b7e9ccda-c159-11e5-9464-8daddf41b838.gif";
+        Pic[31].src = "https://cloud.githubusercontent.com/assets/5677744/12528853/b7ea5114-c159-11e5-8ba1-48b8c3269ee8.gif";
+        Pic[32].src = "https://cloud.githubusercontent.com/assets/5677744/12528842/b7b819ce-c159-11e5-8739-a0da637a4c64.gif";
+        Pic[32].src = "https://cloud.githubusercontent.com/assets/5677744/12528838/b7b3ab96-c159-11e5-895d-68d95b9fa5ae.gif";
+        Pic[34].src = "https://cloud.githubusercontent.com/assets/5677744/12528839/b7b5d48e-c159-11e5-90d5-4957297f8101.gif";
+        Pic[35].src = "https://cloud.githubusercontent.com/assets/5677744/12528840/b7b6a972-c159-11e5-8096-f111a5a93e82.gif";
+        Pic[36].src = "https://cloud.githubusercontent.com/assets/5677744/12528843/b7b82054-c159-11e5-8438-25d39b99aa8b.gif";
+        Pic[37].src = "https://cloud.githubusercontent.com/assets/5677744/12528841/b7b6e9a0-c159-11e5-871b-00d9f53f82ca.gif";
+        Pic[38].src = "https://cloud.githubusercontent.com/assets/5677744/12528844/b7ca8456-c159-11e5-903a-cc0668af46c0.gif";
+        Pic[39].src = "https://cloud.githubusercontent.com/assets/5677744/12528845/b7cc001a-c159-11e5-863c-dfe5e8b09cde.gif";
+        Pic[40].src = "https://cloud.githubusercontent.com/assets/5677744/12528846/b7cd0348-c159-11e5-8b80-899fb788e28f.gif";
+        Pic[41].src = "https://cloud.githubusercontent.com/assets/5677744/12528847/b7d0232a-c159-11e5-85bb-a429bbc44c78.gif";
+        Pic[42].src = "https://cloud.githubusercontent.com/assets/5677744/12528848/b7d24704-c159-11e5-9f3f-7f4faecf089d.gif";
+        Pic[43].src = "https://cloud.githubusercontent.com/assets/5677744/12528849/b7d2ee3e-c159-11e5-90e6-29c2a4007569.gif";
+        Pic[44].src = "https://cloud.githubusercontent.com/assets/5677744/12528850/b7e7a02c-c159-11e5-870a-4406117b405e.gif";
+        Pic[45].src = "https://cloud.githubusercontent.com/assets/5677744/12528851/b7e7aedc-c159-11e5-8916-9b79810ed0f2.gif";
+        Pic[46].src = "https://cloud.githubusercontent.com/assets/5677744/12528852/b7e9ccda-c159-11e5-9464-8daddf41b838.gif";
+        Pic[47].src = "https://cloud.githubusercontent.com/assets/5677744/12528853/b7ea5114-c159-11e5-8ba1-48b8c3269ee8.gif";
         /* ============================================================= */
         Pic[32] = new Image();
         Pic[32].src = "https://cloud.githubusercontent.com/assets/5677744/12475899/cf33f79c-bfda-11e5-9789-fd62781fb500.gif";
@@ -79,6 +95,8 @@
         }
         function Init()
         {
+            isHumanTurn = true;
+            gameOver = false;
             toggleVisibility();
             startTime = Date.now();
             var ii, jj, rr1, rr2;
@@ -252,8 +270,11 @@
                 if ((bb/pow2[kk])%4==0)
                 { if (! vv) return(true);
                     for (ii=0; ii<4; ii++)
-                    { if (Board[ii][jj0]<16) Board[ii][jj0]+=16; }
+                    { if (Board[ii][jj0]<16) Board[ii][jj0]+=16;}
                     IsOver=true;
+                    for (ii=0; ii<4; ii++) {
+
+                    }
                 }
             }
             }
@@ -270,7 +291,7 @@
                 if ((bb/pow2[kk])%4==0)
                 { if (! vv) return(true);
                     for (jj=0; jj<4; jj++)
-                    { if (Board[ii0][jj]<16) Board[ii0][jj]+=16; }
+                    { if (Board[ii0][jj]<16) Board[ii0][jj]+=16;}
                     IsOver=true;
                 }
             }
@@ -309,7 +330,7 @@
                     if ((bb/pow2[kk])%4==0)
                     { if (! vv) return(true);
                         for (ii=0; ii<4; ii++)
-                        { if (Board[ii][3-ii]<16) Board[ii][3-ii]+=16; }
+                        { if (Board[ii][3-ii]<16) Board[ii][3-ii]+=16;}
                         IsOver=true;
                     }
                 }
@@ -320,7 +341,7 @@
             {
                 gameOver = true;
                 toggleVisibility();
-//                RefreshBoard();
+                RefreshBoard();
                 endTime = Date.now();
                 alert("Player "+eval(MoveCount2%2+1)+" has won!");
                 if(eval(MoveCount2%2+1) == 1) {
@@ -421,8 +442,9 @@
         }
         function RefreshPic(nn)
         { if (nn<16)
-        { if (Fld[nn]>=0)
+        { if (Fld[nn]>=0) {
             window.document.images[nn].src = Pic[Fld[nn]].src;
+        }
         else
             window.document.images[nn].src = Pic[32].src;
         }
@@ -431,10 +453,11 @@
             var jj=(nn-16-ii)/4;
             if (Board[ii][jj]>=0)
                 window.document.images[nn].src = Pic[Board[ii][jj]].src;
-            else
+            else {
                 window.document.images[nn].src = Pic[32].src;
+            }
         }
-        }
+        }s
         function RefreshBoard()
         { var ii;
             for (ii=16; ii<32; ii++) RefreshPic(ii);
@@ -575,10 +598,12 @@
             if (isHumanTurn) {
                 document.getElementById("human-turn").style.visibility = 'visible';
                 document.getElementById("computer-turn").style.visibility = 'hidden';
+                document.getElementById("new-game-button").style.visibility = 'hidden';
             }
             if (!isHumanTurn) {
                 document.getElementById("human-turn").style.visibility = 'hidden';
                 document.getElementById("computer-turn").style.visibility = 'visible';
+                document.getElementById("new-game-button").style.visibility = 'hidden';
             }
         }
     }

@@ -95,6 +95,7 @@
         }
         function Init()
         {
+            SetLevel(0,1);
             isHumanTurn = true;
             gameOver = false;
             toggleVisibility();
@@ -358,6 +359,9 @@
             else
             { if (MoveCount==31)
             { IsOver=true;
+                gameOver = true;
+                toggleVisibility();
+                RefreshBoard();
                 endTime = Date.now();
                 alert("It's a draw!");
                 winner = "draw";
@@ -457,7 +461,7 @@
                 window.document.images[nn].src = Pic[32].src;
             }
         }
-        }s
+        }
         function RefreshBoard()
         { var ii;
             for (ii=16; ii<32; ii++) RefreshPic(ii);
@@ -607,6 +611,7 @@
             }
         }
     }
+    SetLevel(0,1);
     Init();
     setInterval("Timer()",200);
 </script>

@@ -31,6 +31,16 @@
     padding: 5% 0;
 }
 
+.container-ending {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    padding: 5% 0 0 0;
+}
+
 .form-field {
     border-width: medium;
 }
@@ -46,5 +56,12 @@
     width: 97%;
     border-width: medium;
     font-size: 100%;
+    font-family: Times;
+}
+
+.user-code {
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
     font-family: Times;
 }

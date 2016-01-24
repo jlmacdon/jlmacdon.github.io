@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e30434bf-af14-4ce6-8df5-49c9f20d026a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ending.html" afterPath="$PROJECT_DIR$/ending.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quarto_game.html" afterPath="$PROJECT_DIR$/quarto_game.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <ignored path="Quarto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,8 +38,8 @@
       <file leaf-file-name="quarto_game.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quarto_game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-77.94118">
-              <caret line="543" column="49" selection-start-line="543" selection-start-column="44" selection-end-line="543" selection-end-column="49" />
+            <state vertical-scroll-proportion="-5.0">
+              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#form#0;n#DIV#0;n#BODY#0;n#HTML#0;n#!!top" expanded="true" />
               </folding>
@@ -45,21 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ending.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ending.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ending.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9410609">
-              <caret line="128" column="70" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+            <state vertical-scroll-proportion="-4.1568627">
+              <caret line="170" column="40" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.1807466">
+              <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -323,6 +325,16 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quarto_game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#form#0;n#DIV#0;n#BODY#0;n#HTML#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/instructions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.75">
@@ -331,28 +343,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quarto_game.html">
+    <entry file="file://$PROJECT_DIR$/ending.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-77.94118">
-          <caret line="543" column="49" selection-start-line="543" selection-start-column="44" selection-end-line="543" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#td#2;n#tr#0;n#table#0;n#form#0;n#DIV#0;n#BODY#0;n#HTML#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-4.1568627">
+          <caret line="170" column="40" selection-start-line="170" selection-start-column="40" selection-end-line="170" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ending.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9410609">
-          <caret line="128" column="70" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+        <state vertical-scroll-proportion="2.1807466">
+          <caret line="74" column="24" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -131,7 +131,6 @@
                 }
             }
             userDataStr = userDataStr.replace(/,/g, "K");
-            alert(userDataStr);
             for (i = 0; i < arrValues.length; ++i) {
                 if ((i % 3) == 0) {
                     winArr[j] = arrValues[i];
@@ -176,7 +175,7 @@
 </div>
 <script>
     retrieveGlobalData();
-    document.write("<div class='user-code'>" + userDataStr + "</div>");
+    document.write("<div class='code-container'><div class='user-code'>" + userDataStr + "</div></div>");
     function returnToMTurk(){
         window.location = "https://www.mturk.com/mturk/findhits";
     }

@@ -7,18 +7,33 @@
     padding: 7px 15px 7px 15px;
     color: black;
     text-decoration: none;
+    margin: 0 20% 0 0;
 }
 
 .button:hover {
     background-color: lightgrey;
 }
 
+.button-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right: 10%;
+    bottom: 10%;
+}
+
+.button-invisible {
+    visibility: hidden;
+}
+
 .center {
     display: flex;
     flex: 1;
-    justify-content: space-around;
+    flex-direction: column;
+    /*justify-content: space-around;*/
     padding: 5% 0;
-
+    margin: 5% 5% 0 5%;
+    font-size: 150%;
 }
 
 .container {
@@ -41,16 +56,53 @@
     padding: 5% 0 0 0;
 }
 
+.enter-exit-button {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 90%;
+    font-family: Times;
+    padding: 7px 15px 7px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.flex-align {
+    display: flex;
+    justify-content: space-around;
+}
+
 .form-field {
     border-width: medium;
 }
 
+.heading {
+    font-size: 175%;
+    text-decoration-line: underline;
+}
+
+.image {
+    position: absolute;
+    margin-left: 5%;
+}
+
+.indent {
+    text-indent: 2%;
+}
+
 .instruction-padding {
-    margin: 5% 15% 5% 15%;
+    margin: 5% 15% 0 15%;
 }
 
 .new-game-button {
-    margin: 10%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 90%;
+    font-family: Times;
+    padding: 7px 15px 7px 15px;
+    color: black;
+    text-decoration: none;
 }
 
 .text-field {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quarto</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="center">
+    <div class="heading">
+        How to Play
+    </div>
+    <br>
+    <div>
+        Both players will place one piece at any unoccupied spot on the board for each turn.
+        After a piece has been placed on the board, it cannot be moved for the duration of the game.
+        What's unique about this game is that rather than picking your own piece to play, your opponent
+        chooses from the available pieces that you then place on the board.
+    </div>
+    <br>
+    <div class="flex-align">
+        <div>
+            Here is an example of a complete turn:<br>
+            <div>1. Your opponent selects a piece for you to put on the board.</div>
+            <div>2. You place the piece onto one of the available spots on the board.</div>
+            <div>3. You select a piece for your opponent.</div>
+            <div>4. Your opponent places the piece onto one of the available spots on the board.</div>
+        </div>
+        <img src="https://cloud.githubusercontent.com/assets/5677744/12539803/2396388c-c2af-11e5-993f-b7031b22b4a7.png"
+             height="240px" width="330px">
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="goToBack()">Back</button>
+        <button class="button" onclick="goToNext()">Next</button>
+    </div>
+</div>
+<script>
+    function goToBack() {
+        window.location.href = "instructions.html";
+        return false;
+    }
+    function goToNext() {
+        window.location.href = "instructions-3.html";
+        return false;
+    }
+</script>
+</body>
+</html>

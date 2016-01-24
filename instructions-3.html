@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quarto</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="center">
+    <div class="heading">
+        How to Win
+    </div>
+    <br>
+    <div>
+        The person that places the fourth piece in a line that all share at least one characteristic
+        wins. If all the pieces are placed on the board without four similar pieces in a line, then
+        the game ends in a draw.
+    </div>
+    <br>
+    <img src="https://cloud.githubusercontent.com/assets/5677744/12539858/2e98df0e-c2b0-11e5-8686-dcbbc9f2935f.png"
+         height="240px" width="330px">
+    <br>
+    <div>
+        You will be playing 10 rounds today. Try to win as often as possible, and work hard on this task!
+    </div>
+    <br>
+    <div>
+        Ready to play? Press the "Play" button to begin!
+    </div>
+    <div>
+        Need to review? Press the "Back" button to take another look at the instructions!
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="goToBack()">Back</button>
+        <button class="button" onclick="goToGame()">Play</button>
+    </div>
+</div>
+<script>
+    function goToBack() {
+        window.location.href = "instructions-2.html";
+        return false;
+    }
+    function goToGame() {
+        window.location.href = "quarto_game.html";
+        return false;
+    }
+</script>
+</body>
+</html>
+

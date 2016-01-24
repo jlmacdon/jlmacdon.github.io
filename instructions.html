@@ -6,33 +6,50 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="center instruction-padding">
-    <div class="container">
-        <div>In this experiment, you will be playing a problem-solving game called Quarto.
-            Below, we will explain how to play this game.
+<div class="center">
+    <div class="heading">
+        Description
+    </div>
+    <br>
+    <div>
+        You will be playing this game against a computer. You will place one piece each turn
+        onto a 4x4 grid board. There are sixteen pieces in total.
+    </div>
+    <br>
+    <div class="flex-align">
+        <div>
+            Each piece has four characteristics:
+            <div class="indent">Color(red OR blue)</div>
+            <div class="indent">Size(big OR small)</div>
+            <div class="indent">Shape(circle OR square)</div>
+            <div class="indent">Hole(hole OR no hole)</div>
         </div>
-        <br>
-        <div>Your objective is to get four pieces of the same type in a row, either by color (red/blue),
-            shape (square/circle), size (small/large), or detail (hole/no hole) onto a 4x4 grid board.
-            You can win the game by placing the four similar pieces vertically, horizontally, or diagonally.
-        </div>
-        <br>
-        <div>You will be playing against the computer, which will pick each piece for you to put on the board.
-            The piece that the computer selects will appear in the top right-hand side of the board.
-            To select the spot where you wish to put your piece, simply click on the area on the board.
-            In turn, you will select a piece for the computer to place on the board.
-            You can do this by clicking on one of the pieces to the left of the board.
-            This will give that piece to the computer.
-        </div>
-        <br>
-        <button class="button" onclick="goToGame()">Let's Begin!</button>
+        <img src="https://cloud.githubusercontent.com/assets/5677744/12539613/fb0a64b8-c2ab-11e5-93d0-352566147bff.png"
+             height="240px" width="auto">
+    </div>
+    <br>
+    <div class="heading">
+        Objective
+    </div>
+    <br>
+    <div>
+        The goal of the game is to line up four pieces on the board that share at least one characteristic.
+    </div>
+    <br>
+    <div>
+        Pieces can be lined up horizontally (in a row), vertically (in a column), or diagonally.
+    </div>
+    <div class="button-container">
+        <button class="button button-invisible">Back</button>
+        <button class="button" onclick="goToNext()">Next</button>
     </div>
 </div>
 <script>
-    function goToGame() {
-        window.location.href = "quarto_game.html";
+    function goToNext() {
+        window.location.href = "instructions-2.html";
         return false;
     }
 </script>
 </body>
 </html>
+

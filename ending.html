@@ -27,7 +27,7 @@
                         userDataStr = userDataStr.replace("lose,", "R");
                     }
                     else {
-                        userDataStr = userDataStr.replace("draw,", "#");
+                        userDataStr = userDataStr.replace("draw,", "!");
                     }
                 }
                 if(x == 3) {
@@ -38,7 +38,95 @@
                         userDataStr = userDataStr.replace(",lose,", "Q");
                     }
                     else {
-                        userDataStr = userDataStr.replace("draw,", "!");
+                        userDataStr = userDataStr.replace("draw,", "@");
+                    }
+                }
+                if(x == 6) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "p");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "P");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "#");
+                    }
+                }
+                if(x == 9) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "a");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "A");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "$");
+                    }
+                }
+                if(x == 12) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "x");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "X");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "%");
+                    }
+                }
+                if(x == 15) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "v");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "V");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "^");
+                    }
+                }
+                if(x == 18) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "t");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "T");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "&");
+                    }
+                }
+                if(x == 21) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "g");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "G");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "*");
+                    }
+                }
+                if(x == 24) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "c");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "C");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", "(");
+                    }
+                }
+                if(x == 27) {
+                    if(arrValues[x]=='win') {
+                        userDataStr = userDataStr.replace(",win,", "z");
+                    }
+                    else if (arrValues[x]=='lose'){
+                        userDataStr = userDataStr.replace(",lose,", "Z");
+                    }
+                    else {
+                        userDataStr = userDataStr.replace("draw,", ")s");
                     }
                 }
             }

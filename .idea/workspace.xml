@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30434bf-af14-4ce6-8df5-49c9f20d026a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instructions-2.html" afterPath="$PROJECT_DIR$/instructions-2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/instructions-3.html" afterPath="$PROJECT_DIR$/instructions-3.html" />
     </list>
     <ignored path="Quarto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="instructions-2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="instructions-2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/instructions-2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45614034">
-              <caret line="26" column="131" selection-start-line="26" selection-start-column="131" selection-end-line="26" selection-end-column="131" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -75,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="instructions-3.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="instructions-3.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/instructions-3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.375">
-              <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.40350878">
+              <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -119,8 +120,8 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/instructions.html" />
-        <option value="$PROJECT_DIR$/instructions-3.html" />
         <option value="$PROJECT_DIR$/instructions-2.html" />
+        <option value="$PROJECT_DIR$/instructions-3.html" />
       </list>
     </option>
   </component>
@@ -272,7 +273,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1677" height="1023" extended-state="6" />
+    <frame x="0" y="23" width="1677" height="1023" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13828503" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -462,18 +463,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructions-3.html">
+    <entry file="file://$PROJECT_DIR$/instructions-2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.375">
-          <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/instructions-2.html">
+    <entry file="file://$PROJECT_DIR$/instructions-3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45614034">
-          <caret line="26" column="131" selection-start-line="26" selection-start-column="131" selection-end-line="26" selection-end-column="131" />
+        <state vertical-scroll-proportion="0.40350878">
+          <caret line="23" column="72" selection-start-line="23" selection-start-column="72" selection-end-line="23" selection-end-column="72" />
           <folding />
         </state>
       </provider>

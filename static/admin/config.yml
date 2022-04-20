@@ -1,6 +1,6 @@
 backend:
   name: medapprise-ssg
-  repo: jlmacdon/medapprise-ssg
+  repo: jlmacdon/jlmacdon.github.io
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"

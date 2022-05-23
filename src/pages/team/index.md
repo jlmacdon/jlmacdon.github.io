@@ -1,6 +1,6 @@
 ---
-templateKey: 'about-page'
-path: /about
+templateKey: 'team-page'
+path: /team
 title: Meet the Team
 subtitle: With help from
 banner: /img/logos/tepper-logo.png

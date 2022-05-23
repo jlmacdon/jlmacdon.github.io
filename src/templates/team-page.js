@@ -6,7 +6,7 @@ import Bio from '../components/Bio'
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 
 // eslint-disable-next-line
-export const AboutPageTemplate = ({ title, subtitle, banner, bios }) => {
+export const TeamPageTemplate = ({ title, subtitle, banner, bios }) => {
   return (
     <section className="section section--gradient">
       <div className="container">
@@ -52,7 +52,7 @@ export const AboutPageTemplate = ({ title, subtitle, banner, bios }) => {
   );
 };
 
-AboutPageTemplate.propTypes = {
+TeamPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   banner: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -62,12 +62,12 @@ AboutPageTemplate.propTypes = {
   }),
 };
 
-const AboutPage = ({ data }) => {
+const TeamPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <AboutPageTemplate
+      <TeamPageTemplate
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
         banner={frontmatter.banner}
@@ -77,7 +77,7 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = {
+TeamPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -85,10 +85,10 @@ AboutPage.propTypes = {
   }),
 };
 
-export default AboutPage;
+export default TeamPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const teamPageQuery = graphql`
+  query TeamPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {

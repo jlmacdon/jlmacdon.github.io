@@ -5,7 +5,6 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 
 // eslint-disable-next-line
@@ -41,8 +40,8 @@ export const IndexPageTemplate = ({
                   <Features gridItems={intro.blurbs} />
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See product
+                      <Link className="btn" to="/vision">
+                        See our vision
                       </Link>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 ---
-templateKey: 'product-page'
-path: /products
+templateKey: 'vision-page'
+path: /vision
 title: medApprise Reinvents the Counseling Process
 image: /img/jumbotron.jpg
 heading: Helping Doctors, Hospitals and Patients

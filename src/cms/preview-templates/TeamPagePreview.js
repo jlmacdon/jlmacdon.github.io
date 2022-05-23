@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { AboutPageTemplate } from '../../templates/about-page'
+import { TeamPageTemplate } from '../../templates/team-page'
 
-const AboutPagePreview = ({ entry }) => {  
+const TeamPagePreview = ({ entry }) => {  
   return (
-    <AboutPageTemplate
+    <TeamPageTemplate
       title={entry.getIn(['data', 'title'])}
       subtitle={entry.getIn(['data', 'subtitle'])}
       banner={entry.getIn(['data', 'banner'])}
@@ -13,10 +13,10 @@ const AboutPagePreview = ({ entry }) => {
   )
 }
 
-AboutPagePreview.propTypes = {
+TeamPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
 }
 
-export default AboutPagePreview
+export default TeamPagePreview

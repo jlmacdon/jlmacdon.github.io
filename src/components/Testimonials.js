@@ -4,14 +4,15 @@ import { v4 } from "uuid";
 
 const Testimonials = ({ testimonials }) => (
   <div>
-    {testimonials.map((testimonial) => (
-      <article key={v4()} className="message">
-        <div className="message-body">
-          {testimonial.quote}
-          <br />
-          <cite> – {testimonial.author}</cite>
-        </div>
-      </article>
+    {testimonials.map(({ author, description, quote }) => (
+         <article key={v4()} className="message">
+         <div className="message-body">
+           {quote}
+           <br />
+           <cite> – {author}</cite>
+           <div>{description}</div>
+         </div>
+       </article>
     ))}
   </div>
 );
@@ -19,8 +20,9 @@ const Testimonials = ({ testimonials }) => (
 Testimonials.propTypes = {
   testimonials: PropTypes.arrayOf(
     PropTypes.shape({
-      quote: PropTypes.string,
-      author: PropTypes.string,
+      quote: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
     })
   ),
 };

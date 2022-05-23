@@ -1,8 +1,9 @@
 ---
 templateKey: 'vision-page'
 path: /vision
-title: medApprise Reinvents the Counseling Process
-image: /img/jumbotron.jpg
+title: Our Vision
+subtitle: medApprise Reinvents Informing Patients Around Shared Decision Making
+image: /img/banners/our-vision.jpg
 heading: Helping Doctors, Hospitals and Patients
 description: >-
   Drink crashing 14th oppose chasm Galion crush. Malice flatten Azog her dearer sour parasites nervous fate pace? Slight aside Smeagol's. Leader check next silent Gondor's triumphant riven. Hand rabbits hanging her Grma? Likely cheap Fenmarch allow us traveled strengthened. I bid you all a very fond farewell. Son bitter Probably smile.

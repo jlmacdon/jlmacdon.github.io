@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   title,
   mainpitch,
   benefits,
-  // testimonials,
+  testimonials,
 }) => {
   const heroImage = getImage(image) || image;
 
@@ -23,7 +23,6 @@ export const IndexPageTemplate = ({
       <FullWidthImage img={heroImage} title={title} />
       <section className="section section--gradient">
         <div className="container">
-          <div className="section">
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
@@ -38,13 +37,12 @@ export const IndexPageTemplate = ({
                     <Features gridItems={benefits.blurbs} />
                   </div>
                   <div className="testimonials">
-                    <h3 className="title">Testimonials</h3>
-                    <Testimonials testimonials={[]} />
+                    <h3 className="title">{testimonials.heading}</h3>
+                    <Testimonials testimonials={testimonials.reviews} />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </section>
     </div>
@@ -59,14 +57,13 @@ IndexPageTemplate.propTypes = {
     heading: PropTypes.string.isRequired,
     blurbs: PropTypes.array.isRequired,
   }),
-  // testimonials: PropTypes.shape({
-  //   heading: PropTypes.string.isRequired,
-  //   reviews: PropTypes.array.isRequired,
-  // }),
+  testimonials: PropTypes.shape({
+    heading: PropTypes.string.isRequired,
+    reviews: PropTypes.array.isRequired,
+  }),
 };
 
 const IndexPage = ({ data }) => {
-  console.log('data: ', data)
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -76,7 +73,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         mainpitch={frontmatter.mainpitch}
         benefits={frontmatter.benefits}
-        // testimonials={frontmatter.testimonials}
+        testimonials={frontmatter.testimonials}
       />
     </Layout>
   );
@@ -114,7 +111,16 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
+            heading
             text
+          }
+        }
+        testimonials {
+          heading
+          reviews {
+            author
+            description
+            quote
           }
         }
       }

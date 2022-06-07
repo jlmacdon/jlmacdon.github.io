@@ -15,10 +15,10 @@ const Footer = class extends React.Component {
           <img
             src={logo}
             alt="medApprise"
-            style={{ width: "14em", height: "2em" }}
+            style={{ width: "20em", height: "8em" }}
           />
         </div>
-        <div>© medApprise 2022</div>
+        {/* <div>© medApprise 2022</div> */}
       </footer>
     );
   }

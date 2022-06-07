@@ -27,17 +27,17 @@ export const IndexPageTemplate = ({
               <div className="column is-10 is-offset-1">
                 <div className="content">
                   <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
+                    <h1 className="title has-text-centered">{mainpitch.title}</h1>
                   </div>
                   <div className="tile">
-                    <h5 className="subtitle is-size-5">{mainpitch.description}</h5>
+                    <h5 className="subtitle is-size-5 has-text-centered">{mainpitch.description}</h5>
                   </div>
                   <div className="benefits">
-                    <h3 className="title">{benefits.heading}</h3>
+                    <h3 className="title has-text-centered">{benefits.heading}</h3>
                     <Features gridItems={benefits.blurbs} />
                   </div>
                   <div className="testimonials">
-                    <h3 className="title">{testimonials.heading}</h3>
+                    <h3 className="title has-text-centered">{testimonials.heading}</h3>
                     <Testimonials testimonials={testimonials.reviews} />
                   </div>
                 </div>

@@ -6,7 +6,10 @@ const Testimonials = ({ testimonials }) => {
   return (
   <div className="columns is-multiline testimonial-reviews">
     {testimonials.map(({ author, description, quote }) => (
-        <article key={v4()} className="message column is-one-quarter-desktop is-full-tablet testimonial">
+        <article
+          key={v4()}
+          className="column is-6 is-full-tablet testimonial has-text-centered"
+        >
           <div>
             {quote}
             <br />

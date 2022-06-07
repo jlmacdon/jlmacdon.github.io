@@ -6,25 +6,46 @@ import Bio from '../components/Bio'
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 
 // eslint-disable-next-line
-export const TeamPageTemplate = ({ title, subtitle, banner, bios }) => {
+export const TeamPageTemplate = ({ title, subtitle, secondary, banner, bios }) => {
   return (
-    <section className="section section--gradient">
+    <section className="section section--gradient" style={{ borderTop: '4px solid #D9D9D9'}}>
       <div className="container">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column is-12">
             <div className="section">
               <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
               <div className="content">
-                {bios.main.map(({ name, description, image }) => (
-                  <Bio
-                    name={name}
-                    description={description}
-                    image={image}
-                    size="main"
-                  />
-                ))}
+                <div style={{ display: 'flex' }}>
+                  {bios.main.map(({ name, description, image }) => (
+                    <div className="bios column is-6">
+                      <Bio
+                        name={name}
+                        description={description}
+                        image={image}
+                        size="main"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h3 className="title is-size-3 has-text-weight-bold is-bold-light">
+                    {secondary}
+                  </h3>
+                  <div style={{ display: 'flex' }}>
+                    {bios.legal.map(({ name, description, image }) => (
+                      <div className="bios column is-6">
+                        <Bio
+                          name={name}
+                          description={description}
+                          image={image}
+                          size="main"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <div style={{ display: 'flex' }}>
                   <h3 className="title is-size-3 has-text-weight-bold is-bold-light">
                     {subtitle}
@@ -55,6 +76,7 @@ export const TeamPageTemplate = ({ title, subtitle, banner, bios }) => {
 TeamPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
+  secondary: PropTypes.string.isRequired,
   banner: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   bios: PropTypes.shape({
     main: PropTypes.array.isRequired,
@@ -69,6 +91,7 @@ const TeamPage = ({ data }) => {
     <Layout>
       <TeamPageTemplate
         title={frontmatter.title}
+        secondary={frontmatter.secondary}
         subtitle={frontmatter.subtitle}
         banner={frontmatter.banner}
         bios={frontmatter.bios}
@@ -93,6 +116,7 @@ export const teamPageQuery = graphql`
       html
       frontmatter {
         title
+        secondary
         subtitle
         banner {
           childImageSharp {
@@ -101,6 +125,15 @@ export const teamPageQuery = graphql`
         }
         bios {
           main {
+            name
+            description
+            image {
+              childImageSharp {
+                gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+              }
+            }
+          }
+          legal {
             name
             description
             image {

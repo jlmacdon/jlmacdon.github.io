@@ -10,7 +10,6 @@ import Tile from '../components/Tile'
 export const VisionPageTemplate = ({
   image,
   title,
-  subtitle,
   heading,
   description,
   process,
@@ -19,10 +18,10 @@ export const VisionPageTemplate = ({
 
   return (
     <div className="content">
-      <FullWidthImage img={heroImage} title={title} subheading={subtitle} />
+      <FullWidthImage img={heroImage} title={title} />
       <section className="section section--gradient">
         <div className="container">
-          <div className="section">
+          <div className="section has-text-centered">
             <div>
               <h3 className="has-text-weight-semibold is-size-2">
                 {heading}

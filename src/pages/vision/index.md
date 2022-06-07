@@ -1,7 +1,7 @@
 ---
 templateKey: 'vision-page'
 path: /vision
-title: How it Works
+title: medApprise reinvents doctor-patient communication
 subtitle: medApprise Reinvents Informing Patients Around Shared Decision Making
 image: /img/banners/our-vision.jpg
 heading: Helping Doctors, Hospitals and Patients

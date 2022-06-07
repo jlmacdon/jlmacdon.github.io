@@ -9,6 +9,7 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: "",
+      selected: 'home',
     };
   }
 
@@ -33,6 +34,7 @@ const Navbar = class extends React.Component {
   }
 
   render() {
+    console.log(this.state.selected)
     return (
       <nav
         className="navbar is-transparent"
@@ -42,7 +44,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="medApprise" style={{ width: "88px" }} />
+              <img src={logo} alt="medApprise" style={{ width: "88px", height: "100px" }} />
             </Link>
             {/* Hamburger menu */}
             <div
@@ -63,13 +65,25 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/">
+              <Link
+                className={`navbar-item ${this.state.selected === 'home' ? 'selected-link' : ''}`}
+                to="/"
+                onClick={() => this.setState({ selected: 'home' })}
+              >
                 Home
               </Link>
-              <Link className="navbar-item" to="/vision">
+              <Link
+                className={`navbar-item ${this.state.selected === 'how' ? 'selected-link' : ''}`}
+                to="/vision"
+                onClick={() => this.setState({ selected: 'how' })}
+              >
                 How it Works
               </Link>
-              <Link className="navbar-item" to="/team">
+              <Link
+                className={`navbar-item ${this.state.selected === 'team' ? 'selected-link' : ''}`}
+                to="/team"
+                onClick={() => this.setState({ selected: 'team' })}
+              >
                 Team
               </Link>
             </div>

@@ -21,30 +21,20 @@ export const IndexPageTemplate = ({
   return (
     <div>
       <FullWidthImage img={heroImage} title={title} />
-      <section className="section section--gradient">
-        <div className="container">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title has-text-centered">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h5 className="subtitle is-size-5 has-text-centered">{mainpitch.description}</h5>
-                  </div>
-                  <div className="benefits">
-                    <h3 className="title has-text-centered">{benefits.heading}</h3>
-                    <Features gridItems={benefits.blurbs} />
-                  </div>
-                  <div className="testimonials">
-                    <h3 className="title has-text-centered">{testimonials.heading}</h3>
-                    <Testimonials testimonials={testimonials.reviews} />
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
+      <div className="column is-10 is-offset-1 has-text-centered padding-unset">
+        <section>
+            <h2 className="has-text-weight-bold">{mainpitch.title}</h2>
+            <div className="med-text">{mainpitch.description}</div>
+        </section>
+      <section>
+        <h2 className="has-text-weight-bold">{benefits.heading}</h2>
+        <Features gridItems={benefits.blurbs} />
       </section>
+      <section>
+        <h2 className="has-text-weight-bold">{testimonials.heading}</h2>
+        <Testimonials testimonials={testimonials.reviews} />
+      </section>
+      </div>
     </div>
   );
 };
@@ -56,11 +46,11 @@ IndexPageTemplate.propTypes = {
   benefits: PropTypes.shape({
     heading: PropTypes.string.isRequired,
     blurbs: PropTypes.array.isRequired,
-  }),
+  }).isRequired,
   testimonials: PropTypes.shape({
     heading: PropTypes.string.isRequired,
     reviews: PropTypes.array.isRequired,
-  }),
+  }).isRequired,
 };
 
 const IndexPage = ({ data }) => {
@@ -108,10 +98,9 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(width: 120, quality: 64, layout: CONSTRAINED)
               }
             }
-            heading
             text
           }
         }

@@ -2,85 +2,57 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Bio from '../components/Bio'
+import Bios from '../components/Bios'
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 
 // eslint-disable-next-line
-export const TeamPageTemplate = ({ title, subtitle, secondary, banner, bios }) => {
+export const TeamPageTemplate = ({ bios }) => {
   return (
-    <section className="section section--gradient" style={{ borderTop: '4px solid #D9D9D9'}}>
-      <div className="container">
-        <div className="columns">
-          <div className="column is-12">
-            <div className="section">
-              <h2 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <div className="content">
-                <div style={{ display: 'flex' }}>
-                  {bios.main.map(({ name, description, image }) => (
-                    <div className="bios column is-6">
-                      <Bio
-                        name={name}
-                        description={description}
-                        image={image}
-                        size="main"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <h3 className="title is-size-3 has-text-weight-bold is-bold-light">
-                    {secondary}
-                  </h3>
-                  <div style={{ display: 'flex' }}>
-                    {bios.legal.map(({ name, description, image }) => (
-                      <div className="bios column is-6">
-                        <Bio
-                          name={name}
-                          description={description}
-                          image={image}
-                          size="main"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div style={{ display: 'flex' }}>
-                  <h3 className="title is-size-3 has-text-weight-bold is-bold-light">
-                    {subtitle}
-                  </h3>
-                  <div
-                    style={{ minWidth: '120px', marginLeft: '1em' }}
-                  >
-                    <PreviewCompatibleImage imageInfo={{ image: banner, alt: 'Tepper Logo' }} />
-                  </div>
-                </div>
-                {bios.support.map(({ name, description, image }) => (
-                  <Bio
-                    name={name}
-                    description={description}
-                    image={image}
-                    size="support"
-                  />
-                ))}
-              </div>
+    <div className="nav-border">
+      <div className="column is-10 is-offset-1 has-text-centered padding-unset">
+        <section>
+          <h2 className="has-text-weight-bold">{bios.founders.heading}</h2>
+          <Bios bios={bios.founders.content} size="large" />
+        </section>
+      </div>
+      <div className="column is-10 is-offset-1 has-text-centered padding-unset">
+        <section>
+          <h2 className="has-text-weight-bold">{bios.legal.heading}</h2>
+          <Bios bios={bios.legal.content} size="large" />
+        </section>
+      </div>
+      <div className="column is-10 is-offset-1 padding-unset">
+        <section>
+          <div className="bio-support-heading">
+            <h2 className="has-text-weight-bold has-text-centered">{bios.support.heading}</h2>
+            <div className="bio-support-logo">
+              <PreviewCompatibleImage imageInfo={{ image: bios.support.logo, alt: 'Tepper Logo' }} />
             </div>
           </div>
-        </div>
+          <div className="bio-support-padding">
+            <Bios bios={bios.support.content} size="small" />
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 };
 
 TeamPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  secondary: PropTypes.string.isRequired,
-  banner: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   bios: PropTypes.shape({
-    main: PropTypes.array.isRequired,
-    support: PropTypes.array.isRequired,
+    founders: PropTypes.shape({
+      heading: PropTypes.string.isRequired,
+      content: PropTypes.array.isRequired,
+    }).isRequired,
+    legal: PropTypes.shape({
+      heading: PropTypes.string.isRequired,
+      content: PropTypes.array.isRequired,
+    }).isRequired,
+    support: PropTypes.shape({
+      heading: PropTypes.string.isRequired,
+      logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+      content: PropTypes.array.isRequired,
+    }).isRequired,
   }),
 };
 
@@ -90,10 +62,6 @@ const TeamPage = ({ data }) => {
   return (
     <Layout>
       <TeamPageTemplate
-        title={frontmatter.title}
-        secondary={frontmatter.secondary}
-        subtitle={frontmatter.subtitle}
-        banner={frontmatter.banner}
         bios={frontmatter.bios}
       />
     </Layout>
@@ -115,39 +83,45 @@ export const teamPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        title
-        secondary
-        subtitle
-        banner {
-          childImageSharp {
-            gatsbyImageData(width: 120, quality: 72, layout: FULL_WIDTH)
-          }
-        }
         bios {
-          main {
-            name
-            description
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+          founders {
+            heading
+            content {
+              name
+              description
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+                }
               }
             }
           }
           legal {
-            name
-            description
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+            heading
+            content {
+              name
+              description
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+                }
               }
             }
           }
           support {
-            name
-            description
-            image {
+            heading
+            logo {
               childImageSharp {
-                gatsbyImageData(width: 120, quality: 72, layout: FULL_WIDTH)
+                gatsbyImageData(width: 84, quality: 72, layout: FULL_WIDTH)
+              }
+            }
+            content {
+              name
+              description
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 240, quality: 72, layout: FULL_WIDTH)
+                }
               }
             }
           }

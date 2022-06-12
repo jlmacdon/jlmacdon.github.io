@@ -1,22 +1,20 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { v4 } from "uuid";
 
 const Testimonials = ({ testimonials }) => {
   return (
-  <div className="columns is-multiline testimonial-reviews">
+  <div className="columns is-multiline p-0">
     {testimonials.map(({ author, description, quote }) => (
-        <article
-          key={v4()}
-          className="column is-6 is-full-tablet testimonial has-text-centered"
+        <div
+          className="column is-5 is-offset-1 is-full-tablet padding-unset"
+          key={author}
         >
-          <div>
-            {quote}
-            <br />
-            <cite> – {author}</cite>
+          <div className="med-text">
+            <div>{quote}</div>
+            <div> – {author}</div>
             <div>{description}</div>
           </div>
-        </article>
+        </div>
     ))}
   </div>)
 };

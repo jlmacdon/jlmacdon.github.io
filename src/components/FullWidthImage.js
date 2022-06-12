@@ -78,6 +78,7 @@ export default function FullWidthImage(props) {
                   lineHeight: "1",
                   padding: "0.25em",
                   borderRadius: "0.375rem",
+                  textAlign: "center"
                 }}
               >
                 {title}

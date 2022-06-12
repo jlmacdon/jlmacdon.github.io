@@ -10,48 +10,34 @@ import Tile from '../components/Tile'
 export const HowItWorksPageTemplate = ({
   image,
   title,
-  heading,
-  description,
+  mainpitch,
   process,
 }) => {
   const heroImage = getImage(image) || image;
 
   return (
-    <div className="content">
+    <div>
       <FullWidthImage img={heroImage} title={title} />
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section has-text-centered">
-            <div>
-              <h3 className="has-text-weight-semibold is-size-2">
-                {heading}
-              </h3>
-              <p>{description}</p>
+      <div className="column is-10 is-offset-1 padding-unset has-text-centered">
+        <section>
+          <h2 className="has-text-weight-bold ">{mainpitch.title}</h2>
+          <div className="med-text">{mainpitch.description}</div>
+        </section>
+        <section>
+          <div className="columns is-multiline section-padding">
+            <div className="column padding-unset column-left">
+              {process.map(({ processIcon, processName, processDescription }) => {
+                return <Tile icon={processIcon} name={processName} description={processDescription} />
+              })}
+            </div>
+            <div className="column padding-unset column-right">
+              {process.map(({ benefitsIcon, benefitsName, benefitsDescription }) => {
+                return <Tile icon={benefitsIcon} name={benefitsName} description={benefitsDescription} />
+              })}
             </div>
           </div>
-        </div>
-      </section>
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="columns is-multiline">
-            {process.map(({ processIcon, processName, processDescription, benefitsIcon, benefitsName, benefitsDescription }) => {
-              return (
-                <div style={{ display: 'flex' }}>
-                  <div className="column is-5">
-                    <Tile icon={processIcon} name={processName} description={processDescription} />
-                  </div>
-                  <div className="column is-2 step-divider">
-                    <div className="divider"></div>
-                  </div>
-                  <div className="column is-5">
-                    <Tile icon={benefitsIcon} name={benefitsName} description={benefitsDescription} />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };
@@ -70,11 +56,9 @@ const HowItWorksPage = ({ data }) => {
   return (
     <Layout>
       <HowItWorksPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        subtitle={frontmatter.subtitle}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
+        image={frontmatter.image}
+        mainpitch={frontmatter.mainpitch}
         process={frontmatter.process}
       />
     </Layout>
@@ -96,14 +80,15 @@ export const howItWorksPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        subtitle
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        heading
-        description
+        mainpitch {
+          title
+          description
+        }
         process {
           processIcon {
             childImageSharp {

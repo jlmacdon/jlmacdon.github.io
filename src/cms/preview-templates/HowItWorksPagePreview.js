@@ -5,11 +5,9 @@ import { HowItWorksPageTemplate } from '../../templates/how-it-works-page'
 const HowItWorksPagePreview = ({ entry, getAsset }) => {
   return (
     <HowItWorksPageTemplate
-      image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
-      subtitle={entry.getIn['data', 'subtitle']}
-      heading={entry.getIn(['data', 'heading'])}
-      description={entry.getIn(['data', 'description'])}
+      image={getAsset(entry.getIn(['data', 'image']))}
+      mainpitch={entry.getIn(['data', 'mainpitch'])}
       process={entry.getIn(['data', 'process'])}
     />
   )

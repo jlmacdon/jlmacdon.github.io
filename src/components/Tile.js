@@ -4,12 +4,12 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage"
 
 export const Tile = ({ icon, name, description }) => {
   return (
-    <div className="is-size-6">
-      <div style={{ maxWidth: '120px', margin: '0 auto' }}>
+    <div className="tile-content">
+      <div className="feature-img">
         <PreviewCompatibleImage imageInfo={{ image: icon, alt: name }}/>
       </div>
-      <h5>{name}</h5>
-      <div>{description}</div>
+      <h2>{name}</h2>
+      <div className="med-text process-text">{description.split('>-').map(line => <div>{line}</div>)}</div>
     </div>
   )
 }

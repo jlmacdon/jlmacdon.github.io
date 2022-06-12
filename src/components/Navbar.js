@@ -73,8 +73,8 @@ const Navbar = class extends React.Component {
                 </div>
                 <div className="hover-link">
                   <Link
-                    className={`navbar-item navbar-item-link small-text ${pathname === '/vision' ? "link-active" : ""}`}
-                    to="/vision"
+                    className={`navbar-item navbar-item-link small-text ${pathname === '/how-it-works' ? "link-active" : ""}`}
+                    to="/how-it-works"
                   >
                     How it Works
                   </Link>

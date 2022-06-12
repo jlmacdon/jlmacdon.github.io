@@ -3,7 +3,7 @@ import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 
 import TeamPagePreview from './preview-templates/TeamPagePreview'
-import VisionPagePreview from './preview-templates/VisionPagePreview'
+import HowItWorksPagePreview from './preview-templates/HowItWorksPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
@@ -11,4 +11,4 @@ CMS.registerMediaLibrary(cloudinary)
 
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('team', TeamPagePreview)
-CMS.registerPreviewTemplate('vision', VisionPagePreview)
+CMS.registerPreviewTemplate('how-it-works', HowItWorksPagePreview)

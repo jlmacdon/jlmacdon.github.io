@@ -1,9 +1,9 @@
 ---
-templateKey: 'vision-page'
-path: /vision
+templateKey: 'how-it-works-page'
+path: /how-it-works
 title: medApprise reinvents doctor-patient communication
 subtitle: medApprise Reinvents Informing Patients Around Shared Decision Making
-image: /img/banners/our-vision.jpg
+image: /img/banners/how-it-works.jpg
 heading: Helping Doctors, Hospitals and Patients
 description: >-
   This is a description about the medApprise process and how it works. It's really important to be able to explain the process in a way that makes sense to doctors. One big fear that we have is that doctors are not very open to the suggestion that something in their practice could be improved so it's important to be very careful in the way that we word things.

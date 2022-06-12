@@ -7,7 +7,7 @@ import FullWidthImage from "../components/FullWidthImage";
 import Tile from '../components/Tile'
 
 // eslint-disable-next-line
-export const VisionPageTemplate = ({
+export const HowItWorksPageTemplate = ({
   image,
   title,
   heading,
@@ -56,7 +56,7 @@ export const VisionPageTemplate = ({
   );
 };
 
-VisionPageTemplate.propTypes = {
+HowItWorksPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
@@ -64,12 +64,12 @@ VisionPageTemplate.propTypes = {
   description: PropTypes.string,
 };
 
-const VisionPage = ({ data }) => {
+const HowItWorksPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
-      <VisionPageTemplate
+      <HowItWorksPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         subtitle={frontmatter.subtitle}
@@ -81,7 +81,7 @@ const VisionPage = ({ data }) => {
   );
 };
 
-VisionPage.propTypes = {
+HowItWorksPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -89,10 +89,10 @@ VisionPage.propTypes = {
   }),
 };
 
-export default VisionPage;
+export default HowItWorksPage;
 
-export const visionPageQuery = graphql`
-  query VisionPage($id: String!) {
+export const howItWorksPageQuery = graphql`
+  query HowItWorksPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

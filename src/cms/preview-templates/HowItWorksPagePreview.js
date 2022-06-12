@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { VisionPageTemplate } from '../../templates/vision-page'
+import { HowItWorksPageTemplate } from '../../templates/how-it-works-page'
 
-const VisionPagePreview = ({ entry, getAsset }) => {
+const HowItWorksPagePreview = ({ entry, getAsset }) => {
   return (
-    <VisionPageTemplate
+    <HowItWorksPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
       subtitle={entry.getIn['data', 'subtitle']}
@@ -15,11 +15,11 @@ const VisionPagePreview = ({ entry, getAsset }) => {
   )
 }
 
-VisionPagePreview.propTypes = {
+HowItWorksPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 }
 
-export default VisionPagePreview
+export default HowItWorksPagePreview

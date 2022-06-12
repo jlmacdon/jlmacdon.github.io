@@ -113,15 +113,15 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/vision/index.md"
-        label: "Vision Page"
-        name: "vision"
+      - file: "src/pages/how-it-works/index.md"
+        label: "How It Works Page"
+        name: "how-it-works"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "vision-page",
+              default: "how-it-works-page",
             }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }

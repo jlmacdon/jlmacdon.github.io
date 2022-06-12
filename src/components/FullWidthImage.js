@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function FullWidthImage(props) {
   const {
-    height = 400,
+    height = "30rem",
     img,
     title,
     subheading,
@@ -69,16 +69,16 @@ export default function FullWidthImage(props) {
             {/* Any content here will be centered in the component */}
             {title && (
               <h1
-                className="is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+                className="is-size-1-desktop"
                 style={{
                   boxShadow:
                     "rgba(69, 142, 204, 0.95) 0.5rem 0px 0px, rgba(69, 142, 204, 0.95) -0.5rem 0px 0px",
                   backgroundColor: "rgba(69, 142, 204, 0.95)",
                   color: "white",
                   lineHeight: "1",
-                  padding: "0.25em",
-                  borderRadius: "0.375rem",
-                  textAlign: "center"
+                  padding: "1rem",
+                  borderRadius: "0.5rem",
+                  textAlign: "center",
                 }}
               >
                 {title}

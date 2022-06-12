@@ -29,7 +29,7 @@ export const TeamPageTemplate = ({ bios }) => {
               <PreviewCompatibleImage imageInfo={{ image: bios.support.logo, alt: 'Tepper Logo' }} />
             </div>
           </div>
-          <div className="bio-support-padding">
+          <div className="section-padding">
             <Bios bios={bios.support.content} size="small" />
           </div>
         </section>

@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 const Testimonials = ({ testimonials }) => {
   return (
-  <div className="columns is-multiline p-0">
+  <div className="columns is-multiline">
     {testimonials.map(({ author, description, quote }) => (
         <div
-          className="column is-5 is-offset-1 is-full-tablet padding-unset"
+          className="column is-6 is-full-tablet padding-unset"
           key={author}
         >
           <div className="med-text">

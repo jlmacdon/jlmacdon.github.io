@@ -26,14 +26,16 @@ export const IndexPageTemplate = ({
             <h2 className="has-text-weight-bold">{mainpitch.title}</h2>
             <div className="med-text">{mainpitch.description}</div>
         </section>
-      <section>
-        <h2 className="has-text-weight-bold">{benefits.heading}</h2>
-        <Features gridItems={benefits.blurbs} />
-      </section>
-      <section>
-        <h2 className="has-text-weight-bold">{testimonials.heading}</h2>
-        <Testimonials testimonials={testimonials.reviews} />
-      </section>
+        <section>
+          <h2 className="has-text-weight-bold">{benefits.heading}</h2>
+          <Features gridItems={benefits.blurbs} />
+        </section>
+        <section>
+            <h2 className="has-text-weight-bold">{testimonials.heading}</h2>
+            <div className="section-padding section-padding-top">
+              <Testimonials testimonials={testimonials.reviews} />
+            </div>
+        </section>
       </div>
     </div>
   );

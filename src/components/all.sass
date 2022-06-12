@@ -46,14 +46,36 @@ h2
   height: 3.75rem
   max-height: none !important
 
-.navbar-item-link
+.hover-link
   padding: 0.5rem !important
   border-radius: 0.5rem
   margin: 1.375rem 1.875rem
   &:hover
-    border: 1px solid red !important
+    background-color: rgba(69, 142, 204, 0.25) !important
+
+.link-active
+  font-weight: bold
+
+.navbar-item-link
+  padding: unset
+  &:hover
+    background-color: transparent !important
+
+.navbar-burger
+  margin-top: 0.25rem !important
+  color: $black !important
+  &:hover
+    background-color: rgba(69, 142, 204, 0.25) !important
+
+.navbar .navbar-menu
+  box-shadow: none !important
+
+.is-active
+  background-color: unset !important
 
 // Index
+
+// How It Works
 
 // Team
 .nav-border
@@ -124,9 +146,6 @@ h3, h4, h5
 .title
   color: $black
 
-//.navbar .navbar-menu
-  //box-shadow: none !important
-
 .content .taglist
   list-style: none
   margin-bottom: 0
@@ -195,12 +214,6 @@ h3, h4, h5
 // .selected-link
 //  color: $medapprise-blue !important
 //  font-weight: 700
-
-//.navbar-burger
-//  color: $black !important
-//  &:hover
-//    color: red !important
-//    background-color: $accent-color !important
 
 //.navbar-item .icon
 //  color: $black

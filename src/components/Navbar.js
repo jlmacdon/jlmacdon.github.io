@@ -8,7 +8,14 @@ const Navbar = class extends React.Component {
       this.state = {
         active: false,
         navBarActiveClass: "",
+        pathname: '',
       };
+    }
+
+    componentDidMount() {
+      if (typeof window !== `undefined`) {
+        this.setState({ pathname: window?.location?.pathname });
+      }
     }
 
     toggleHamburger() {
@@ -32,7 +39,7 @@ const Navbar = class extends React.Component {
     }
     
     render() {
-      const pathname = window.location.pathname;
+      const pathname = this.state.pathname;
       return (
         <nav
           className="navbar is-transparent"
@@ -65,7 +72,7 @@ const Navbar = class extends React.Component {
               <div className="navbar-start has-text-centered">
                 <div className="hover-link">
                   <Link
-                    className={`navbar-item navbar-item-link small-text ${pathname === '/' ? "link-active" : ""}`}
+                    className={`navbar-item navbar-item-link small-text ${pathname && pathname === '/' ? "link-active" : ""}`}
                     to="/"
                   >
                     Home
@@ -73,7 +80,7 @@ const Navbar = class extends React.Component {
                 </div>
                 <div className="hover-link">
                   <Link
-                    className={`navbar-item navbar-item-link small-text ${pathname === '/how-it-works' ? "link-active" : ""}`}
+                    className={`navbar-item navbar-item-link small-text ${pathname && pathname === '/how-it-works' ? "link-active" : ""}`}
                     to="/how-it-works"
                   >
                     How it Works
@@ -81,7 +88,7 @@ const Navbar = class extends React.Component {
                 </div>
                 <div className="hover-link">
                   <Link
-                    className={`navbar-item navbar-item-link small-text ${pathname === '/team' ? "link-active" : ""}`}
+                    className={`navbar-item navbar-item-link small-text ${pathname && pathname === '/team' ? "link-active" : ""}`}
                     to="/team"
                   >
                     Team

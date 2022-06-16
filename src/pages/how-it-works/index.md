@@ -6,7 +6,7 @@ image: /img/banners/how-it-works.jpg
 mainpitch:
   title: Helping Doctors, Patients, and Hospitals
   description: >-
-    This is a description about the medApprise process and how it works. It's really important to be able to explain the process in a way that makes sense to doctors. One big fear that we have is that doctors are not very open to the suggestion that something in their practice could be improved so it's important to be very careful in the way that we word things.
+    medApprise aims to change how doctors inform patients about their surgeries, as well as any steps that need to be taken before or after their operation to ensure optimal results. Today, doctors spend a lot of time explaining procedures. They often have to repeat themselves, especially since patients are not always in the proper state of mind to process all the information and make a decision. Instead, medApprise gives patients an opportunity to understand their situation on their own time, freeing up doctors’ time to work with other patients. Keep reading to find out how it works!  
 process:
   - processIcon: /img/icons/benefit-1.png
     processName: Record

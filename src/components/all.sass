@@ -94,6 +94,7 @@ h2
 
 .process-text
   text-align: left
+  margin: 0 2rem
 
 // How It Works
 .tile-content
@@ -101,15 +102,6 @@ h2
 
 .tile-img
   margin: 1.25rem auto
-
-.column-left
-  @media (min-width: 769px)
-    border-right: 1.75rem solid $medapprise-blue
-
-.column-right
-  @media (min-width: 769px)
-    position: relative
-    left: 1.25rem
 
 // Team
 .nav-border
@@ -288,11 +280,9 @@ $menu-label-color: $white-ter
   display: flex !important
   justify-content: center
 
-.divider
-  height: 100%
-  width: 5px
-  background: $medapprise-blue
-
-
+@mixin for-tablet-only
+  @media screen and (max-width: 768px)
+    .bio-content-column
+      margin: 0 8.3333%
 
 @import "~bulma"

@@ -25,12 +25,12 @@ export const HowItWorksPageTemplate = ({
         </section>
         <section>
           <div className="columns is-multiline section-padding">
-            <div className="column padding-unset column-left">
+            <div className="column padding-unset">
               {process.map(({ processIcon, processName, processDescription }) => {
                 return <Tile icon={processIcon} name={processName} description={processDescription} />
               })}
             </div>
-            <div className="column padding-unset column-right">
+            <div className="column padding-unset">
               {process.map(({ benefitsIcon, benefitsName, benefitsDescription }) => {
                 return <Tile icon={benefitsIcon} name={benefitsName} description={benefitsDescription} />
               })}

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_netlify_cms=self.webpackChunkgatsby_starter_netlify_cms||[]).push([[883],{429:function(e,t,l){l.r(t);var n=l(7294),u=l(8634);t.default=function(){return n.createElement(u.Z,null,n.createElement("div",null,n.createElement("h1",null,"NOT ALL THOSE WHO WANDER ARE LOST."),n.createElement("p",null,"But you seem to have lost your way.")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-3d21c1425c7357544da4.js.map
